@@ -35,20 +35,17 @@ public class DeckOfCards {
             numOfPlayers = scanner.nextInt();
         } while (numOfPlayers < 2 || numOfPlayers > 4);
         for (int i = 0; i < numOfPlayers; i++) {
-            System.out.println("enter new planer name");
+            System.out.println("Enter player name");
             String playerName=scanner.next();
             Player.addPlayer(new Player(playerName));
         }
-        System.out.println("players added: "+numOfPlayers);
     }
 
 
     void printCards(String[][] cards){
-        System.out.print("Cards{");
         for (String[] card : cards) {
             System.out.print(Arrays.toString(card));
         }
-        System.out.println("}");
     }
 
 
@@ -57,6 +54,7 @@ public class DeckOfCards {
         for (int i = 0; i < Player.playerList.size(); i++) {
             System.out.print("Player-" + (i+1) +" ");
             printCards(Player.playerList.get(i).playerCards);
+            System.out.println();
         }
     }
 
